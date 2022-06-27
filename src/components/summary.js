@@ -9,19 +9,18 @@ const SpentRowItem = ({amount, day}) => {
     )
 }
 
+
 const Summary = () => {
-    const [spentValue, setSpentValue ] = useState()
+    const [kmTravel, setkmTravel] = useState()
+    const [gasMileage, setGasMileage] = useState()
 
     useEffect (() => {
-        console.log(spentValue)
-    }, [spentValue])
+        console.log(kmTravel)
+    }, [kmTravel])
 
     return (
-        <div className="summary">
-            <div className='title-container'>
-            <b>Your Weekly Summary:</b>
-            </div>
-            <div className='content-container'>
+        <div className="summary"> 
+             <div className='content-container'>
                 <SpentRowItem amount="$40" day="Sunday" />
                 <SpentRowItem amount="$30" day="Monday" />
                 <SpentRowItem amount="$40" day="Tuesday" />
@@ -30,9 +29,18 @@ const Summary = () => {
                 <SpentRowItem amount="$50" day="Friday" />
                 <SpentRowItem amount="$120" day="Saturday" />
             </div>
+            <div className='title-container'>
+            <b>Your Weekly Summary:</b>
+            </div>
             <div className='spent-container'>
                 <p>How much have you spent today? &nbsp; </p>
-                $<input placeholder='Ex. 35' value={spentValue} onChange={e => setSpentValue(e.target.value)} type="number"/> CAD
+                <div>   
+                    Kilometers travelled: <input placeholder='Ex. 30' value={kmTravel} onChange={e => setkmTravel(e.target.value)} type="number"/> km
+                </div>
+                <div>
+                    Gas Mileage: <input placeholder='Ex. 12 L' value={kmTravel} onChange={e => setkmTravel(e.target.value)} type="number"/> / 100km
+                </div>
+                <p>Note: Current gas price is <span>229</span>, as estimated by <a href="https://rapidapi.com/collectapi/api/gas-price/pricing">RapidAPI</a></p>
             </div>
         </div>
     )

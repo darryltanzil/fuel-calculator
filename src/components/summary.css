@@ -2,13 +2,13 @@
     margin: auto;
     width: 50%;
     border: 5px solid rgb(186, 186, 186);
-    border-radius: 10px;    
     margin-top: 30px;
     padding: 40px;
 }
 
 .title-container {
-    font-size: 3em;   
+    font-size: 3em; 
+    color: rgb(122, 122, 203);  
 }
 
 .content-container {
@@ -28,8 +28,16 @@
     font-size: 1.3rem;
 }
 
+.spent-container div{
+    margin-top: 10px;
+}
 input {
     font-family: Arial;
     font-size: 0.9em;
     border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
 }
